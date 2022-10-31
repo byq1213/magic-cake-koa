@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '56427:80'
+    container_name: wxcloud_magic-cake-koa
+    labels:
+      - wxPort=27082
+      - hostPort=56427
+      - wxcloud=magic-cake-koa
+      - role=container
+    environment:
+      - MYSQL_USERNAME=
+      - MYSQL_PASSWORD=
+      - MYSQL_ADDRESS=
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=12345678
+      - MYSQL_ADDRESS=127.0.0.1:3309
+networks:
+  default:
+    external:
+      name: wxcb0
