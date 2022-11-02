@@ -4,7 +4,8 @@
   "description": "微信云托管 koa 框架模板",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "MYSQL_PASSWORD=12345678 nodemon index.js"
   },
   "author": "",
   "license": "Apache-2.0",
